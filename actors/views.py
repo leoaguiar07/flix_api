@@ -6,12 +6,20 @@ from app.permissions import GlobalDefaultPermission
 
 
 class ActorCreateListView(generics.ListCreateAPIView):
+    """
+    GET - Lista todos os atores cadastrados.
+    POST - Cria novo Ator
+    """
     permission_classes = (IsAuthenticated, GlobalDefaultPermission)
     queryset = Actor.objects.all()
     serializer_class = ActorSerializer
 
 
 class ActorRetrieveUpdateDestroyView(generics.RetrieveUpdateDestroyAPIView):
+    """
+    GET - Lista todos os atores cadastrados.
+    POST - Cria novo Ator
+    """
     permission_classes = (IsAuthenticated, GlobalDefaultPermission)
     queryset = Actor.objects.all()
     serializer_class = ActorSerializer
